@@ -120,7 +120,7 @@ def perform_adaptive_experiments(observational_matrix, I_minus_W_true, n_sources
 
     # Loop exactly K times (Budget)
     for t in range(K):
-        # 1. Passive Refinement (Using updated check_unique_matching_and_refine)
+        # 1. Passive Refinement
         is_unique, partial_matching, bipartite_graph, row_nodes, col_nodes = check_unique_matching_and_refine(
             bipartite_graph, row_nodes, col_nodes
         )
@@ -139,8 +139,6 @@ def perform_adaptive_experiments(observational_matrix, I_minus_W_true, n_sources
                 break
                 
             normalized_benefits = compute_normalized_marginal_benefit(bipartite_graph, sampled_matchings, col_nodes)
-            
-            # NOTE: Removed random fallback to match Notebook behavior
             intervened_index = select_variable_to_intervene(normalized_benefits)
 
         elif strategy_type == 'random':

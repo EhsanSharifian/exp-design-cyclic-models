@@ -210,7 +210,6 @@ if __name__ == "__main__":
 
     # --- Run and save WITH ICA (if computational resources allow) ---
     # NOTE: Running the full ICA simulation (below) is often very time-consuming.
-    # The original notebook focuses on the 'without ICA' (proxy) results.
 
     # Uncomment the following block if you wish to run the full ICA simulation:
     """
